@@ -8,7 +8,7 @@ import pygame
 from pygame.locals import *
 
 
-version = "1.5.9"
+__version__ = "1.6.3"
 
 pygame.init()
 
@@ -87,6 +87,7 @@ permit = {
     "TNT"       : 0,
     "pepper"    : 0, 
     "big_apple" : 0,
+    "meteorite" : False
 }
 
 meteorite = {
@@ -105,7 +106,7 @@ meteorite = {
     "y"             : -100,
     "speed"         : 30,
     "damage"        : 1,
-    "interrupt_run" : 5,
+    "interrupt_run" : 5, #Second
     "size"          : int(random.choice(["100", "128", "150"])),
     
     "Explosion" : {
@@ -240,7 +241,7 @@ def Collision_meteorite_to_line_end():
 def print_meteorite():
     global aim_meteorite
     
-    if(int(time.time() - start_time_meteorite) >= meteorite["interrupt_run"]):
+    if((int(time.time() - start_time_meteorite) >= meteorite["interrupt_run"]) and (permit["meteorite"] == True)):
         
         if(aim_meteorite == None):
             random_meteorite = random.choice(["left", "middle", "right"])
@@ -599,21 +600,41 @@ while(True):
                 if((snake["speed_x"] != 20) and (snake["speed_x"] != -20)):
                     snake["speed_x"] += 20
                     snake["speed_y"] = 0
+                
+                if(permit["meteorite"] == False):
+                    start_time_meteorite = time.time()
+                
+                permit["meteorite"] = True
             
             if((event.key == K_LEFT) or (event.key == K_a)):
                 if((snake["speed_x"] != -20) and (snake["speed_x"] != 20)):
                     snake["speed_x"] -= 20
                     snake["speed_y"] = 0
+                
+                if(permit["meteorite"] == False):
+                    start_time_meteorite = time.time()
+                
+                permit["meteorite"] = True
             
             if((event.key == K_UP) or (event.key == K_w)):
                 if((snake["speed_y"] != -20) and (snake["speed_y"] != 20)):
                     snake["speed_y"] -= 20
                     snake["speed_x"] = 0
+                
+                if(permit["meteorite"] == False):
+                    start_time_meteorite = time.time()
+                
+                permit["meteorite"] = True
             
             if((event.key == K_DOWN) or (event.key == K_s)):
                 if((snake["speed_y"] != 20) and (snake["speed_y"] != -20)):
                     snake["speed_y"] += 20
                     snake["speed_x"] = 0
+                
+                if(permit["meteorite"] == False):
+                    start_time_meteorite = time.time()
+                
+                permit["meteorite"] = True
             
             
             if(event.key == K_SPACE):
