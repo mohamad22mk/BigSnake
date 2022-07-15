@@ -1,4 +1,4 @@
-# python => 3.8.3
+# python => 3.8.3 | By MKG
 
 import sys
 import time
@@ -9,7 +9,7 @@ import pygame
 from pygame.locals import *
 
 
-__version__ = "1.6.7"
+__version__ = "1.6.8"
 
 pygame.init()
 
@@ -20,73 +20,37 @@ pygame.init()
 
 # - - - info code - - -
 
-if(sys.platform == "win32"):
-    file = {
-        # Pic
-        "TNT"              : pygame.image.load("Pic\\TNT.png"),
-        "fire"             : pygame.image.load("Pic\\Fire.png"),
-        "heart"            : pygame.image.load("Pic\\Heart.png"),
-        "space"            : pygame.image.load("Pic\\Space.png"),
-        "apple"            : pygame.image.load("Pic\\Apple32.png"),
-        "pepper"           : pygame.image.load("Pic\\pepper.png"),
-        "mini_icon"        : pygame.image.load("Pic\\Icon.png"),
-        "Half_Heart"       : pygame.image.load("Pic\\Half_Heart.png"),
-        "Empty_heart"      : pygame.image.load("Pic\\Empty_Heart.png"),
-        "Explosion_Fire"   : pygame.image.load("Pic\\Explosion_Fire.png"),
-        "Left_Meteorite"   : pygame.image.load("Pic\\Left_Meteorite.png"),
-        "Right_Meteorite"  : pygame.image.load("Pic\\Right_Meteorite.png"),
-        "Middle_Meteorite" : pygame.image.load("Pic\\Middle_Meteorite.png"),
+file = {
+    # Pic
+    "TNT"              : pygame.image.load("Pic/TNT.png"),
+    "fire"             : pygame.image.load("Pic/Fire.png"),
+    "heart"            : pygame.image.load("Pic/Heart.png"),
+    "space"            : pygame.image.load("Pic/Space.png"),
+    "apple"            : pygame.image.load("Pic/Apple32.png"),
+    "pepper"           : pygame.image.load("Pic/pepper.png"),
+    "mini_icon"        : pygame.image.load("Pic/Icon.png"),
+    "Half_Heart"       : pygame.image.load("Pic/Half_Heart.png"),
+    "Empty_heart"      : pygame.image.load("Pic/Empty_Heart.png"),
+    "Explosion_Fire"   : pygame.image.load("Pic/Explosion_Fire.png"),
+    "Left_Meteorite"   : pygame.image.load("Pic/Left_Meteorite.png"),
+    "Right_Meteorite"  : pygame.image.load("Pic/Right_Meteorite.png"),
+    "Middle_Meteorite" : pygame.image.load("Pic/Middle_Meteorite.png"),
 
-        # Sound
-        "Eat"                 : pygame.mixer.Sound("Sound\\Eat.ogg"),
-        "Level_Up"            : pygame.mixer.Sound("Sound\\Level_Up.ogg"),
-        "game_over"           : pygame.mixer.Sound("Sound\\Game_Over.ogg"),
-        "main_music"          : pygame.mixer.Sound("Sound\\main_music.ogg"),
-        "Meteor_Fall"         : pygame.mixer.Sound("Sound\\Meteor_Fall.mp3"),
-        "Explosion_TNT"       : pygame.mixer.Sound("Sound\\TNT.wav"),
-        "Eat_Big_Apple"       : pygame.mixer.Sound("Sound\\Eat_Big_Apple.ogg"),
-        "Explosion_Meteorite" : pygame.mixer.Sound("Sound\\Explosion_Meteorite.mp3"),
+    # Sound
+    "Eat"                 : pygame.mixer.Sound("Sound/Eat.ogg"),
+    "Level_Up"            : pygame.mixer.Sound("Sound/Level_Up.ogg"),
+    "game_over"           : pygame.mixer.Sound("Sound/Game_Over.ogg"),
+    "main_music"          : pygame.mixer.Sound("Sound/main_music.ogg"),
+    "Meteor_Fall"         : pygame.mixer.Sound("Sound/Meteor_Fall.mp3"),
+    "Explosion_TNT"       : pygame.mixer.Sound("Sound/TNT.wav"),
+    "Eat_Big_Apple"       : pygame.mixer.Sound("Sound/Eat_Big_Apple.ogg"),
+    "Explosion_Meteorite" : pygame.mixer.Sound("Sound/Explosion_Meteorite.mp3"),
 
-        # Font
-        "font"  : ("Font\\Plaguard-ZVnjx.otf"),
-        "font2" : ("Font\\SportypoReguler-OVGwe.ttf"),
-    }
+    # Font
+    "font"  : ("Font/Plaguard-ZVnjx.otf"),
+    "font2" : ("Font/SportypoReguler-OVGwe.ttf"),
+}
 
-
-elif((sys.platform == "linux") or (sys.platform == "linux2") or (sys.platform == "darwin")):
-    file = {
-        # Pic
-        "TNT"              : pygame.image.load("Pic/TNT.png"),
-        "fire"             : pygame.image.load("Pic/Fire.png"),
-        "heart"            : pygame.image.load("Pic/Heart.png"),
-        "space"            : pygame.image.load("Pic/Space.png"),
-        "apple"            : pygame.image.load("Pic/Apple32.png"),
-        "pepper"           : pygame.image.load("Pic/pepper.png"),
-        "mini_icon"        : pygame.image.load("Pic/Icon.png"),
-        "Half_Heart"       : pygame.image.load("Pic/Half_Heart.png"),
-        "Empty_heart"      : pygame.image.load("Pic/Empty_Heart.png"),
-        "Explosion_Fire"   : pygame.image.load("Pic/Explosion_Fire.png"),
-        "Left_Meteorite"   : pygame.image.load("Pic/Left_Meteorite.png"),
-        "Right_Meteorite"  : pygame.image.load("Pic/Right_Meteorite.png"),
-        "Middle_Meteorite" : pygame.image.load("Pic/Middle_Meteorite.png"),
-
-        # Sound
-        "Eat"                 : pygame.mixer.Sound("Sound/Eat.ogg"),
-        "Level_Up"            : pygame.mixer.Sound("Sound/Level_Up.ogg"),
-        "game_over"           : pygame.mixer.Sound("Sound/Game_Over.ogg"),
-        "main_music"          : pygame.mixer.Sound("Sound/main_music.ogg"),
-        "Meteor_Fall"         : pygame.mixer.Sound("Sound/Meteor_Fall.mp3"),
-        "Explosion_TNT"       : pygame.mixer.Sound("Sound/TNT.wav"),
-        "Eat_Big_Apple"       : pygame.mixer.Sound("Sound/Eat_Big_Apple.ogg"),
-        "Explosion_Meteorite" : pygame.mixer.Sound("Sound/Explosion_Meteorite.mp3"),
-
-        # Font
-        "font"  : ("Font/Plaguard-ZVnjx.otf"),
-        "font2" : ("Font/SportypoReguler-OVGwe.ttf"),
-    }
-
-else:
-    print("Error: Your OS not Found")
 
 
 
