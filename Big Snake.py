@@ -1,4 +1,4 @@
-# python => 3.8.3 | By MKG
+# By MKG
 
 import sys
 import time
@@ -9,7 +9,7 @@ import pygame
 from pygame.locals import *
 
 
-__version__ = "1.6.9"
+__version__ = "1.6.10"
 
 pygame.init()
 
@@ -508,6 +508,8 @@ def Pause_Game(Condition):
 
 
 def Rest_All_Game():
+    global start_time_meteorite
+    
     # Rest All Game
     game["fps"]   = (13)
     game["score"] = (0)
